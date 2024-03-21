@@ -1,7 +1,7 @@
 import "../Header/Header.css";
 
 import { MdLocationOn } from "react-icons/md";
-
+import { FaListUl } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 
 function Header() {
@@ -12,6 +12,9 @@ function Header() {
           <h2>MEX-ITES</h2>
         </div>
         <div className="header__button-container">
+          <div className="header__list">
+            <FaListUl />
+          </div>
           <div className="header__location">
             <MdLocationOn />
           </div>

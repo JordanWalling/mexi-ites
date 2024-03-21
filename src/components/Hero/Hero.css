@@ -2,6 +2,8 @@
   height: calc(100vh - 75px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("https://images.pexels.com/photos/8479698/pexels-photo-8479698.jpeg?auto=compress&cs=tinysrgb&w=400");
+  max-width: 1200px;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -25,4 +27,21 @@
   font-weight: 300;
   letter-spacing: 1px;
   color: hsl(0, 0%, 90%);
+  margin-bottom: 60px;
+}
+
+.hero__section button {
+  color: #171717;
+  background-color: #ffd204;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+}
+.hero__section button:hover {
+  color: #ffd204;
+  background-color: #171717;
+  transition: all 0.5s ease-in-out;
 }

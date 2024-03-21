@@ -30,9 +30,9 @@ header {
 
 .header__button-container {
   height: 100%;
-  grid-column: 8/11;
+  grid-column: 6/11;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   color: #fff;
   font-size: 20px;
