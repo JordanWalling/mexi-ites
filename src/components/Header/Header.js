@@ -1,5 +1,5 @@
 import "../Header/Header.css";
-
+import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { FaListUl } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
@@ -9,11 +9,15 @@ function Header() {
     <header>
       <div className="header__container">
         <div className="header__logo">
-          <h2>MEX-ITES</h2>
+          <Link to="/">
+            <h2>MEX-ITES</h2>
+          </Link>
         </div>
         <div className="header__button-container">
           <div className="header__list">
-            <FaListUl />
+            <Link to="/menu">
+              <FaListUl />
+            </Link>
           </div>
           <div className="header__location">
             <MdLocationOn />

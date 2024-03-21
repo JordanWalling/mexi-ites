@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeLayout from "./layout/HomeLayout";
 import LandingPage from "./pages/LandingPage";
+import MenuListPage from "./pages/MenuListPage";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomeLayout />}>
             <Route index element={<LandingPage />} />
-            <Route path="/menu" element={<>Menu Page</>} />
+            <Route path="/menu" element={<MenuListPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
