@@ -24,9 +24,13 @@ header {
   color: #ffd204;
 }
 
+.header__logo h2 {
+  margin: 0;
+}
+
 .header__button-container {
   height: 100%;
-  grid-column: 7/11;
+  grid-column: 8/11;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
