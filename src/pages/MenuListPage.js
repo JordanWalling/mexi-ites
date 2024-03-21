@@ -1,3 +1,4 @@
+import "../pages/MenuListPage.css";
 import MenuListItemCard from "../components/MenuListItemCard/MenuListItemCard";
 function MenuListPage() {
   const items = [
