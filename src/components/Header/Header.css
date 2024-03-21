@@ -1,0 +1,35 @@
+header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  height: 75px;
+  background-color: #171717;
+  width: 100%;
+}
+
+.header__container {
+  height: 100%;
+  grid-column: 2/12;
+
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  align-items: center;
+}
+
+.header__logo {
+  grid-column: 1/5;
+  height: 100%;
+  font-size: 12px;
+  display: grid;
+  align-items: center;
+  color: #ffd204;
+}
+
+.header__button-container {
+  height: 100%;
+  grid-column: 7/11;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  color: #fff;
+  font-size: 20px;
+}
