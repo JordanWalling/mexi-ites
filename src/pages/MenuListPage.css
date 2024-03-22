@@ -3,7 +3,6 @@
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   background-color: rgb(243, 243, 243);
-  margin-top: 20px;
 }
 .menulist__section ul {
   /* display: grid;

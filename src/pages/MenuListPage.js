@@ -1,5 +1,7 @@
 import "../pages/MenuListPage.css";
+
 import MenuListItemCard from "../components/MenuListItemCard/MenuListItemCard";
+import FilterButtons from "../components/FilterButtons/FilterButtons";
 function MenuListPage() {
   const items = [
     {
@@ -102,13 +104,17 @@ function MenuListPage() {
     },
   ];
   return (
-    <section className="menulist__section">
-      <ul>
-        {items.map((item) => {
-          return <MenuListItemCard item={item} key={item.id} />;
-        })}
-      </ul>
-    </section>
+    <>
+      {/* Add Filtered Buttons here */}
+      <FilterButtons />
+      <section className="menulist__section">
+        <ul>
+          {items.map((item) => {
+            return <MenuListItemCard item={item} key={item.id} />;
+          })}
+        </ul>
+      </section>
+    </>
   );
 }
 export default MenuListPage;
