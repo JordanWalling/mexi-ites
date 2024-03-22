@@ -21,6 +21,7 @@ function MenuListPage() {
         "Pico de Gallo (a fresh-chopped tomato salsa)",
         "House-blend salsa",
       ],
+      addOns: ["cheese", "beans", "rice", "salsa", "sour cream", "avocado"],
     },
     {
       id: 2,
@@ -39,6 +40,7 @@ function MenuListPage() {
         "Pico de Gallo (a fresh-chopped tomato salsa)",
         "House-blend salsa",
       ],
+      addOns: ["cheese", "beans", "rice", "salsa", "sour cream", "avocado"],
     },
     {
       id: 3,
@@ -52,11 +54,11 @@ function MenuListPage() {
         "Cheese",
         "Ground Beef",
         "Chicken",
+        "Sautee Vegetables",
         "Chilli Sauce",
         "Sour Cream",
-        "Rice",
-        "Beans",
       ],
+      addOns: ["cheese", "beans", "salsa", "sour cream", "avocado"],
     },
     {
       id: 4,
@@ -76,6 +78,7 @@ function MenuListPage() {
         "Rice",
         "Onions",
       ],
+      addOns: ["cheese", "salsa", "sour cream", "avocado"],
     },
     {
       id: 5,
@@ -102,10 +105,73 @@ function MenuListPage() {
         "Guacamole",
       ],
     },
+    {
+      id: 7,
+      title: "Corn Chips and Guacamole",
+      category: "Appetizers",
+      image:
+        "https://images.pexels.com/photos/1108775/pexels-photo-1108775.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description:
+        "Roasted Corn Chips with perfectly blended spices with avacado.",
+      ingredients: ["Corn Chips", "Avocado", "Spices", "Sour Cream"],
+    },
+    {
+      id: 8,
+      title: "Churros",
+      category: "Appetizers",
+      image:
+        "https://images.pexels.com/photos/1108775/pexels-photo-1108775.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "Desert for the masses",
+      ingredients: ["Deep fried Dough", "Cinnamon", "Sugar", "Egg"],
+      addOns: ["chocolate", "salted caramel"],
+    },
+    {
+      id: 9,
+      title: "Corn Spears",
+      category: "Appetizers",
+      image:
+        "https://images.pexels.com/photos/1108775/pexels-photo-1108775.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "Grilled corn on a cob with blended spices and butter",
+      ingredients: ["Corn", "Butter", "Spices"],
+      addOns: ["chocolate", "salted caramel"],
+    },
+    {
+      id: 10,
+      title: "Corona",
+      category: "Drinks",
+      image:
+        "https://images.pexels.com/photos/39720/pexels-photo-39720.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "Mexican Beer",
+    },
+    {
+      id: 11,
+      title: "Tequila Mixer",
+      category: "Drinks",
+      image:
+        "https://images.pexels.com/photos/39720/pexels-photo-39720.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "Mexican Beer",
+      addOns: ["lemonade", "soda water", "coca cola", "orange juice"],
+    },
+    {
+      id: 12,
+      title: "Bottled Water",
+      category: "Drinks",
+      image:
+        "https://images.pexels.com/photos/39720/pexels-photo-39720.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "600ml Bottled Water",
+    },
+    {
+      id: 13,
+      title: "Margarita",
+      category: "Drinks",
+      image:
+        "https://images.pexels.com/photos/39720/pexels-photo-39720.jpeg?auto=compress&cs=tinysrgb&w=400",
+      description: "Classic Tequila Based Mexican Cocktail",
+      ingredients: ["Tequila", "Lime Juice", "Triple Sec", "Salt"],
+    },
   ];
   return (
     <>
-      {/* Add Filtered Buttons here */}
       <FilterButtons />
       <section className="menulist__section">
         <ul>
