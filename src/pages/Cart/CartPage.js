@@ -12,7 +12,7 @@ function CartPage() {
           </div>
           <div className="cart__quantity-container">
             <button>-</button>
-            <input type="number" />
+            <input type="number" min="1" placeholder="1" />
             <button>+</button>
           </div>
           <div className="cart__item-total-price">
