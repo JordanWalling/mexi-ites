@@ -24,7 +24,9 @@ function Header() {
           </div>
 
           <div className="header__cart">
-            <FaShoppingCart />
+            <Link to="/cart">
+              <FaShoppingCart />
+            </Link>
           </div>
         </div>
       </div>
