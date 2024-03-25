@@ -20,7 +20,7 @@
   grid-column: 5/7;
 }
 .filter__btn-wrapper li:nth-child(3) {
-  grid-column: 8/11;
+  grid-column: 8/10;
 }
 
 .filter__btn-wrapper li button {

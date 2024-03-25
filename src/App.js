@@ -5,6 +5,7 @@ import LandingPage from "./pages/LandingPage";
 import MenuListPage from "./pages/MenuListPage";
 import ItemDetailsPage from "./pages/ItemDetailsPage";
 import CartPage from "./pages/Cart/CartPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/menu" element={<MenuListPage />} />
             <Route path="/menu/:id" element={<ItemDetailsPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>

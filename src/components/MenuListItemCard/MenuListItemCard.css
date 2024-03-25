@@ -5,7 +5,7 @@
   display: grid;
   grid-template-rows: 0.5fr 1fr;
   margin: 0 auto;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   background-color: #fff;
 }
 .menulist__card:hover {
@@ -85,14 +85,23 @@
   font-size: 14px;
 }
 
+.menulist__card a {
+  text-decoration: none;
+}
+
 .menu__list-item-btn {
-  padding: 2px 4px;
+  padding: 4px 0px;
   text-transform: uppercase;
   margin: 5px auto;
   width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #ffd204;
+  color: #171717;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 768px) {
