@@ -4,6 +4,7 @@
       "id": 1,
       "title": "burritos",
       "category": "mains",
+      "price": 13.7,
       "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800",
       "description": "The fan favourite! Enjoy the freshest ingredients inside a beautifully made tortilla.",
       "ingredients": [
@@ -15,12 +16,15 @@
         "Pico de Gallo (a fresh-chopped tomato salsa)",
         "House-blend salsa"
       ],
+      "mainFilling": ["Grilled Chicken", "Grilled Beef"],
+      "spiceLevel": ["Mild", "Spicy"],
       "addOns": ["cheese", "beans", "rice", "salsa", "sour cream", "avocado"]
     },
     {
       "id": 2,
       "title": "bowls",
       "category": "mains",
+      "price": 15.99,
       "image": "https://images.pexels.com/photos/8696479/pexels-photo-8696479.jpeg?auto=compress&cs=tinysrgb&w=800",
       "description": "Want the delicious Mexican flavours of our burrito but feel like something without the tortilla? Try your favourite burrito in a bowl!",
       "ingredients": [
@@ -32,28 +36,33 @@
         "Pico de Gallo (a fresh-chopped tomato salsa)",
         "House-blend salsa"
       ],
+      "mainFilling": ["Grilled Chicken", "Grilled Beef"],
+      "spiceLevel": ["Mild", "Spicy"],
       "addOns": ["cheese", "beans", "rice", "salsa", "sour cream", "avocado"]
     },
     {
       "id": 3,
       "title": "enchiladas",
       "category": "mains",
+      "price": 12.99,
       "image": "https://images.pexels.com/photos/9213936/pexels-photo-9213936.jpeg?auto=compress&cs=tinysrgb&w=400",
       "description": "Engorge in a crowd favorite, Enchiladas. Perfect as a snack or to share!",
       "ingredients": [
         "Cheese",
-        "Ground Beef",
+        "Grilled Beef",
         "Chicken",
         "Sautee Vegetables",
         "Chilli Sauce",
         "Sour Cream"
       ],
+      "mainFilling": ["Grilled Beef", "Grilled Chicken", "Sautee Vegetables"],
       "addOns": ["cheese", "beans", "salsa", "sour cream", "avocado"]
     },
     {
       "id": 4,
       "title": "quesadillas",
       "category": "mains",
+      "price": 14.95,
       "image": "https://images.pexels.com/photos/4955210/pexels-photo-4955210.jpeg?auto=compress&cs=tinysrgb&w=400",
       "description": "Quesadillas and perfect for every occasion! The perfect finger food!",
       "ingredients": [
@@ -66,6 +75,7 @@
         "Rice",
         "Onions"
       ],
+      "mainFilling": ["Grilled Beef", "Grilled Chicken"],
       "addOns": ["cheese", "salsa", "sour cream", "avocado"]
     },
     {
@@ -79,6 +89,7 @@
       "id": 6,
       "title": "Nachos",
       "category": "appetizers",
+      "price": 18.99,
       "image": "https://images.pexels.com/photos/1108775/pexels-photo-1108775.jpeg?auto=compress&cs=tinysrgb&w=400",
       "description": "Our Nachos are topped with fresh cheese and has your choice of meaty goodness",
       "ingredients": [
@@ -88,14 +99,16 @@
         "Sour Cream",
         "Cheese",
         "Guacamole"
-      ]
+      ],
+      "addOns": ["cheese", "salsa", "sour cream", "avocado"],
+      "mainFilling": ["Grilled Beef", "Grilled Chicken"]
     },
     {
       "id": 7,
       "title": "Corn Chips and Guacamole",
       "category": "appetizers",
       "image": "https://images.pexels.com/photos/1108775/pexels-photo-1108775.jpeg?auto=compress&cs=tinysrgb&w=400",
-      "description": "Roasted Corn Chips with perfectly blended spices with avacado.",
+      "description": "Roasted Corn Chips with perfectly blended spices with avocado.",
       "ingredients": ["Corn Chips", "Avocado", "Spices", "Sour Cream"]
     },
     {

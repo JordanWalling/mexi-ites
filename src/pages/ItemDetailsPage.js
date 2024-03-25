@@ -18,6 +18,7 @@ function ItemDetailsPage() {
     });
     const data = await resp.json();
     setItem(data);
+    console.log(data);
   }
 
   useEffect(() => {
@@ -27,11 +28,7 @@ function ItemDetailsPage() {
     <div className="item__details-wrapper">
       <div className="item__details-main-content">
         <div className="item__details-img">
-          <img
-            // src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800"
-            src={item.image}
-            alt={item.description}
-          />
+          <img src={item.image} alt={item.description} />
         </div>
         <div className="item__details-quantity-wrapper">
           <div className="item__details-quantity-container">
@@ -47,27 +44,34 @@ function ItemDetailsPage() {
         <div className="item__details-item-desc">
           {/* <h2>BURRITOS</h2> */}
           <h2>{item.title}</h2>
-          <p>From $13.70</p>
+          {item.price && <p>From ${item.price.toFixed(2)}</p>}
         </div>
 
         <div className="cart__addons-container">
           <div className="main-fillings">
             <h3>CHOOSE YOUR MAIN FILLING</h3>
-            <div className="main-filling-container">
-              <div className="main-filling-img">
-                <img
-                  src="https://images.pexels.com/photos/6896080/pexels-photo-6896080.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt=""
-                />
-              </div>
-              <div className="main-filling-title">
-                <p>Grilled Chicken</p>
-              </div>
-              <div className="main-filling-radio">
-                <input type="radio" />
-              </div>
-            </div>
-            <div className="main-filling-container">
+            {item.mainFilling &&
+              item.mainFilling.map((i) => {
+                return (
+                  <div className="main-filling-container">
+                    <div className="main-filling-img">
+                      <img
+                        src="https://images.pexels.com/photos/6896080/pexels-photo-6896080.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt=""
+                      />
+                    </div>
+                    <div className="main-filling-title">
+                      {/* <p>Grilled Chicken</p> */}
+                      <p>{i}</p>
+                    </div>
+                    <div className="main-filling-radio">
+                      <input type="radio" />
+                    </div>
+                  </div>
+                );
+              })}
+
+            {/* <div className="main-filling-container">
               <div className="main-filling-img">
                 <img
                   src="https://images.pexels.com/photos/1251208/pexels-photo-1251208.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -80,7 +84,7 @@ function ItemDetailsPage() {
               <div className="main-filling-radio">
                 <input type="radio" />
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="spice-level-container">
             <h3>CHOOSE SPICE LEVEL</h3>
