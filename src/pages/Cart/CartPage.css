@@ -66,6 +66,7 @@
 
 .cart__item-add-ons ul {
   list-style-type: none;
+  margin-bottom: 40px;
 }
 .cart__item-add-ons li {
   font-size: 12px;

@@ -31,6 +31,9 @@ function CartPage() {
             </ul>
           </div>
         </div>
+        <div className="cart__all-items-price">
+          <h3>Total Price: $29.95</h3>
+        </div>
       </div>
     </div>
   );
