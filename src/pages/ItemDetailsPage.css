@@ -2,11 +2,10 @@
   height: 70vh;
   width: 100%;
   background-color: #fff;
-  position: relative;
 }
 
 .item__details-img {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .item__details-img img {
@@ -29,23 +28,12 @@
 }
 
 .item__details-quantity-wrapper {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
   margin: auto;
   width: 100px;
   height: 35px;
-  /* padding: 1px; */
   background-color: #fff;
-  /* display: grid;
-    place-items: center;
-    grid-template-columns: repeat(3, 1fr); */
   border-radius: 5px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
-  /* font-weight: bold; */
-  /* font-size: 14px; */
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2);
 }
 
 .item__details-quantity-container {

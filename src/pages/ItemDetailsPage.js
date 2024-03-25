@@ -33,11 +33,6 @@ function ItemDetailsPage() {
             alt={item.description}
           />
         </div>
-        <div className="item__details-item-desc">
-          {/* <h2>BURRITOS</h2> */}
-          <h2>{item.title}</h2>
-          <p>From $13.70</p>
-        </div>
         <div className="item__details-quantity-wrapper">
           <div className="item__details-quantity-container">
             <span className="minus">
@@ -49,6 +44,12 @@ function ItemDetailsPage() {
             </span>
           </div>
         </div>
+        <div className="item__details-item-desc">
+          {/* <h2>BURRITOS</h2> */}
+          <h2>{item.title}</h2>
+          <p>From $13.70</p>
+        </div>
+
         <div className="cart__addons-container">
           <div className="main-fillings">
             <h3>CHOOSE YOUR MAIN FILLING</h3>
