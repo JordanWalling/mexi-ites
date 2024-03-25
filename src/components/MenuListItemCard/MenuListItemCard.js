@@ -29,7 +29,7 @@ function MenuListItemCard({ item }) {
         </div>
       </div>
       <Link to={`/menu/${item.id}`}>
-        <button>Order {item.title}</button>
+        <button className="menu__list-item-btn">Order {item.title}</button>
       </Link>
     </li>
   );

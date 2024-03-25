@@ -1,11 +1,31 @@
 .menulist__section {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   background-color: rgb(243, 243, 243);
+  padding-top: 20px;
 }
 .menulist__section ul {
-  /* display: grid;
-  grid-template-columns: repeat(1, 1fr); */
-  grid-column: 2/12;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .menulist__section ul {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .menulist__section ul {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 0 auto;
+  }
 }

@@ -1,15 +1,12 @@
 .menulist__card {
-  display: grid;
   width: 100%;
-
+  max-width: 340px;
+  min-height: 180px;
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
   margin: 0 auto;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 2fr;
-  background-color: #fff;
-  margin: 10px auto;
-  border-radius: 10px;
   margin-bottom: 10px;
-  padding-bottom: 10px;
+  background-color: #fff;
 }
 .menulist__card:hover {
   box-shadow: 3px 6px 5px rgb(0, 0, 0, 0.2);
@@ -44,8 +41,8 @@
 .card__title {
   text-transform: uppercase;
   font-style: italic;
-  font-size: 22px;
-  margin: 20px 0;
+  font-size: 18px;
+  margin: 8px 0;
   padding: 0 20px;
 }
 
@@ -73,7 +70,7 @@
   letter-spacing: 0.25px;
   font-weight: bold;
   font-family: "Sinibold", sans-serif;
-  margin: 16px auto;
+  margin: 10px auto;
 }
 
 .card__ingredients-title ul {
@@ -86,4 +83,27 @@
 .card__ingredients-title ul li {
   margin-bottom: 5px;
   font-size: 14px;
+}
+
+.menu__list-item-btn {
+  padding: 2px 4px;
+  text-transform: uppercase;
+  margin: 5px auto;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .menulist__card {
+    width: 100%;
+    display: grid;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .card__ingredients-title ul {
+    gap: 0;
+    grid-template-columns: 1fr;
+  }
 }
