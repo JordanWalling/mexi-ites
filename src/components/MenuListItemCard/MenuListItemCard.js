@@ -28,7 +28,9 @@ function MenuListItemCard({ item }) {
           </div>
         </div>
       </div>
-      <button>Order {item.title}</button>
+      <Link to={`/menu/${item.id}`}>
+        <button>Order {item.title}</button>
+      </Link>
     </li>
   );
 }
