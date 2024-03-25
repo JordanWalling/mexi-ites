@@ -1,10 +1,10 @@
 const filters = [
   {
-    title: "main",
+    title: "mains",
     id: 1,
   },
   {
-    title: "sides",
+    title: "appetizers",
     id: 2,
   },
   {

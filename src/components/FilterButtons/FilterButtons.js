@@ -1,13 +1,14 @@
-import filters from "../../data";
 import "../FilterButtons/FilterButtons.css";
-function FilterButtons() {
+function FilterButtons({ setCategoryChange, filters }) {
   return (
     <section className="filter__btn-wrapper">
       <ul>
         {filters.map((filter) => {
           return (
             <li key={filter.id}>
-              <button>{filter.title}</button>
+              <button onClick={() => setCategoryChange(filter.title)}>
+                {filter.title}
+              </button>
             </li>
           );
         })}
