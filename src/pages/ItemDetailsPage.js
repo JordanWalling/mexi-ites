@@ -1,19 +1,41 @@
 import "../pages/ItemDetailsPage.css";
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 function ItemDetailsPage() {
+  const { id } = useParams();
+  const [item, setItem] = useState({});
+
+  async function fetchItem() {
+    const resp = await fetch("http://localhost:4000/items/" + id, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
+    const data = await resp.json();
+    setItem(data);
+  }
+
+  useEffect(() => {
+    fetchItem();
+  }, []);
   return (
     <div className="item__details-wrapper">
       <div className="item__details-main-content">
         <div className="item__details-img">
           <img
-            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt=""
+            // src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800"
+            src={item.image}
+            alt={item.description}
           />
         </div>
         <div className="item__details-item-desc">
-          <h2>BURRITOS</h2>
+          {/* <h2>BURRITOS</h2> */}
+          <h2>{item.title}</h2>
           <p>From $13.70</p>
         </div>
         <div className="item__details-quantity-wrapper">
