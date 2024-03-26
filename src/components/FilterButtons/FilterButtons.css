@@ -1,26 +1,17 @@
 .filter__btn-wrapper {
   height: 60px;
-  width: 150%;
+  width: 100%;
   margin-bottom: 10px;
+  max-width: 768px;
+  margin: 0 auto;
 }
 .filter__btn-wrapper ul {
   height: 100%;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  justify-content: center;
-  align-content: center;
   list-style-type: none;
-}
-
-.filter__btn-wrapper li:nth-child(1) {
-  grid-column: 2/4;
-}
-.filter__btn-wrapper li:nth-child(2) {
-  grid-column: 5/7;
-}
-.filter__btn-wrapper li:nth-child(3) {
-  grid-column: 8/10;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .filter__btn-wrapper li button {
@@ -34,3 +25,7 @@
   letter-spacing: 0.5px;
   cursor: pointer;
 }
+/* 
+@media screen and (min-width: 768) {
+    
+} */

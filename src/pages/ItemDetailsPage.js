@@ -37,7 +37,7 @@ function ItemDetailsPage() {
     }
   }
 
-  let totalItemPrice = quantity * item.price.toFixed(2);
+  let totalItemPrice = quantity * item.price;
   return (
     <div className="item__details-wrapper">
       <div className="item__details-main-content">
@@ -52,6 +52,7 @@ function ItemDetailsPage() {
               </button>
             </span>
             <span className="number">{quantity}</span>
+
             <span className="plus">
               <button onClick={handlePlusButtonClick}>
                 <FaPlus />
@@ -127,10 +128,7 @@ function ItemDetailsPage() {
               })}
           </div>
           <div className="item__add-to-cart-container">
-            <button>
-              {/* Add To Order - {quantity * item.price && item.price.toFixed(2)} */}
-              Add To Order - ${totalItemPrice.toFixed(2)}
-            </button>
+            <button>Add To Order - ${totalItemPrice.toFixed(2)}</button>
           </div>
         </div>
       </div>
