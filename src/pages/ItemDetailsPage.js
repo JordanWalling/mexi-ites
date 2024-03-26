@@ -53,80 +53,65 @@ function ItemDetailsPage() {
             {item.mainFilling &&
               item.mainFilling.map((i) => {
                 return (
-                  <div className="main-filling-container">
-                    <div className="main-filling-img">
-                      <img
-                        src="https://images.pexels.com/photos/6896080/pexels-photo-6896080.jpeg?auto=compress&cs=tinysrgb&w=600"
-                        alt=""
-                      />
+                  <>
+                    <div className="main-filling-container">
+                      <div className="main-filling-img">
+                        <img
+                          src="https://images.pexels.com/photos/6896080/pexels-photo-6896080.jpeg?auto=compress&cs=tinysrgb&w=600"
+                          alt=""
+                        />
+                      </div>
+                      <div className="main-filling-title">
+                        {/* <p>Grilled Chicken</p> */}
+                        <p>{i}</p>
+                      </div>
+                      <div className="main-filling-radio">
+                        <input type="radio" />
+                      </div>
                     </div>
-                    <div className="main-filling-title">
-                      {/* <p>Grilled Chicken</p> */}
-                      <p>{i}</p>
-                    </div>
-                    <div className="main-filling-radio">
-                      <input type="radio" />
-                    </div>
+                  </>
+                );
+              })}
+          </div>
+
+          <div className="spice-level-container">
+            {item.spiceLevel && <h3>CHOOSE SPICE LEVEL</h3>}
+            {item.spiceLevel &&
+              item.spiceLevel.map((spice) => {
+                return (
+                  <div className="spice-level-mild">
+                    <p>{spice}</p>
+                    <input type="radio" />
                   </div>
                 );
               })}
 
-            {/* <div className="main-filling-container">
-              <div className="main-filling-img">
-                <img
-                  src="https://images.pexels.com/photos/1251208/pexels-photo-1251208.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt=""
-                />
-              </div>
-              <div className="main-filling-title">
-                <p>Grilled Beef</p>
-              </div>
-              <div className="main-filling-radio">
-                <input type="radio" />
-              </div>
-            </div> */}
-          </div>
-          <div className="spice-level-container">
-            <h3>CHOOSE SPICE LEVEL</h3>
-            <div className="spice-level-mild">
-              <p>Mild</p>
-              <input type="radio" />
-            </div>
-            <div className="spice-level-spicy">
+            {/* <div className="spice-level-spicy">
               <p>Spicy</p>
               <input type="radio" />
-            </div>
+            </div> */}
           </div>
           <div className="extras__wrapper">
             <h3>CHOOSE ANY EXTRAS</h3>
-            <div className="extras__container">
-              <div className="extras__img">
-                <img
-                  src="https://images.pexels.com/photos/6103071/pexels-photo-6103071.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt=""
-                />
-              </div>
-              <div className="extras__title">
-                <p>Brown Rice</p>
-              </div>
-              <div className="extras__checkbox">
-                <input type="checkbox" />
-              </div>
-            </div>
-            <div className="extras__container">
-              <div className="extras__img">
-                <img
-                  src="https://images.pexels.com/photos/4109946/pexels-photo-4109946.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt=""
-                />
-              </div>
-              <div className="extras__title">
-                <p>Cheese</p>
-              </div>
-              <div className="extras__checkbox">
-                <input type="checkbox" />
-              </div>
-            </div>
+            {item.addOns &&
+              item.addOns.map((addOn) => {
+                return (
+                  <div className="extras__container">
+                    <div className="extras__img">
+                      <img
+                        src="https://images.pexels.com/photos/6103071/pexels-photo-6103071.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        alt=""
+                      />
+                    </div>
+                    <div className="extras__title">
+                      <p>{addOn}</p>
+                    </div>
+                    <div className="extras__checkbox">
+                      <input type="checkbox" />
+                    </div>
+                  </div>
+                );
+              })}
           </div>
           <div className="item__add-to-cart-container">
             <button>Add To Order - $29.95</button>
