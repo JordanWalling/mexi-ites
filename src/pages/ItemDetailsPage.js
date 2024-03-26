@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 function ItemDetailsPage() {
   const { id } = useParams();
   const [item, setItem] = useState({});
+  const [quantity, setQuantity] = useState(1);
 
   async function fetchItem() {
     const resp = await fetch("http://localhost:4000/items/" + id, {
@@ -24,6 +25,19 @@ function ItemDetailsPage() {
   useEffect(() => {
     fetchItem();
   }, []);
+
+  function handlePlusButtonClick() {
+    if (quantity < 10) {
+      setQuantity((prev) => prev + 1);
+    }
+  }
+  function handleMinusButtonClick() {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
+  }
+
+  let totalItemPrice = quantity * item.price.toFixed(2);
   return (
     <div className="item__details-wrapper">
       <div className="item__details-main-content">
@@ -33,11 +47,15 @@ function ItemDetailsPage() {
         <div className="item__details-quantity-wrapper">
           <div className="item__details-quantity-container">
             <span className="minus">
-              <FaMinus />
+              <button onClick={handleMinusButtonClick}>
+                <FaMinus />
+              </button>
             </span>
-            <span className="number">1</span>
+            <span className="number">{quantity}</span>
             <span className="plus">
-              <FaPlus />
+              <button onClick={handlePlusButtonClick}>
+                <FaPlus />
+              </button>
             </span>
           </div>
         </div>
@@ -49,7 +67,7 @@ function ItemDetailsPage() {
 
         <div className="cart__addons-container">
           <div className="main-fillings">
-            <h3>CHOOSE YOUR MAIN FILLING</h3>
+            {item.mainFilling && <h3>CHOOSE YOUR MAIN FILLING</h3>}
             {item.mainFilling &&
               item.mainFilling.map((i) => {
                 return (
@@ -85,14 +103,9 @@ function ItemDetailsPage() {
                   </div>
                 );
               })}
-
-            {/* <div className="spice-level-spicy">
-              <p>Spicy</p>
-              <input type="radio" />
-            </div> */}
           </div>
           <div className="extras__wrapper">
-            <h3>CHOOSE ANY EXTRAS</h3>
+            {item.addOns && <h3>CHOOSE ANY EXTRAS</h3>}
             {item.addOns &&
               item.addOns.map((addOn) => {
                 return (
@@ -114,7 +127,10 @@ function ItemDetailsPage() {
               })}
           </div>
           <div className="item__add-to-cart-container">
-            <button>Add To Order - $29.95</button>
+            <button>
+              {/* Add To Order - {quantity * item.price && item.price.toFixed(2)} */}
+              Add To Order - ${totalItemPrice.toFixed(2)}
+            </button>
           </div>
         </div>
       </div>
