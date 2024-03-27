@@ -2,12 +2,15 @@ import "../pages/ItemDetailsPage.css";
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { appContext } from "../context/context";
 
 function ItemDetailsPage() {
+  const { cart, setCart } = useContext(appContext);
   const { id } = useParams();
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
+  const [mainChoice, setMainChoice] = useState(null);
 
   async function fetchItem() {
     const resp = await fetch("http://localhost:4000/items/" + id, {
@@ -38,6 +41,23 @@ function ItemDetailsPage() {
   }
 
   let totalItemPrice = quantity * item.price;
+
+  function addToCart() {
+    setCart((prev) => {
+      return [
+        ...prev,
+        {
+          itemPrice: item.price,
+          quantity: quantity,
+          title: item.title,
+          image: item.image,
+          mainFillingChoice: mainChoice,
+        },
+      ];
+    });
+  }
+  console.log(cart);
+  console.log(mainChoice);
   return (
     <div className="item__details-wrapper">
       <div className="item__details-main-content">
@@ -85,7 +105,12 @@ function ItemDetailsPage() {
                         <p>{i}</p>
                       </div>
                       <div className="main-filling-radio">
-                        <input type="radio" />
+                        <input
+                          type="radio"
+                          name="mainFilling"
+                          value={i}
+                          onChange={(e) => setMainChoice(e.target.value)}
+                        />
                       </div>
                     </div>
                   </>
@@ -128,7 +153,9 @@ function ItemDetailsPage() {
               })}
           </div>
           <div className="item__add-to-cart-container">
-            <button>Add To Order - ${totalItemPrice.toFixed(2)}</button>
+            <button onClick={addToCart}>
+              Add To Order - ${totalItemPrice.toFixed(2)}
+            </button>
           </div>
         </div>
       </div>

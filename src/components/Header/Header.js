@@ -1,10 +1,14 @@
 import "../Header/Header.css";
+import { appContext } from "../../context/context";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { FaListUl } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 
 function Header() {
+  const { cart, setCart } = useContext(appContext);
+
   return (
     <header>
       <div className="header__container">
