@@ -68,7 +68,7 @@ function ItemDetailsPage() {
     const existingItem = cart.find((cartItem) => {
       return (
         cartItem.title === newItem.title &&
-        cartItem.spice === newItem.selectedSpice &&
+        cartItem.spice === newItem.spice &&
         cartItem.mainFillingChoice === mainChoice &&
         JSON.stringify(cartItem.addOns) === JSON.stringify(newItem.addOns)
       );

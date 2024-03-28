@@ -16,6 +16,7 @@
   align-items: center;
   justify-content: center;
   height: 100%;
+  position: relative;
 }
 
 .cart__img-container {
@@ -79,4 +80,13 @@
 .cart__item-add-ons li {
   font-size: 12px;
   font-style: italic;
+}
+
+.cart__item-number .cart__item-remove-item button {
+  background-color: white;
+  color: red;
+  border: none;
+  position: absolute;
+  top: 0%;
+  right: 0%;
 }

@@ -1,25 +1,54 @@
 import "../Cart/CartPage.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { appContext } from "../../context/context";
+import { ImCross } from "react-icons/im";
+
 function CartPage() {
-  const { cart } = useContext(appContext);
+  const { cart, setCart } = useContext(appContext);
 
   const totalPrice = cart.reduce((total, cartItem) => {
     return total + cartItem.itemPrice * cartItem.quantity;
   }, 0);
+
+  function handleIncrement(index) {
+    const updatedCart = [...cart];
+    updatedCart[index].quantity += 1;
+    setCart(updatedCart);
+  }
+  function handleDecrement(index) {
+    const updatedCart = [...cart];
+    if (updatedCart[index].quantity === 1) {
+      handleRemoveItem(index);
+    }
+    if (updatedCart[index].quantity > 1) {
+      updatedCart[index].quantity -= 1;
+      setCart(updatedCart);
+    }
+  }
+
+  function handleRemoveItem(index) {
+    const updatedCart = cart.filter((_, i) => i !== index);
+    setCart(updatedCart);
+  }
   return (
     <div className="cart__wrapper">
       {cart.length > 0 ? (
-        cart.map((cartItem) => (
+        cart.map((cartItem, index) => (
           <div className="cart__item-container">
             <div className="cart__item-number">
               <div className="cart__img-container">
                 <img src={cartItem.image} alt={cartItem.title} />
               </div>
               <div className="cart__quantity-container">
-                <button>-</button>
-                <input type="number" min="1" placeholder={cartItem.quantity} />
-                <button>+</button>
+                <button onClick={() => handleDecrement(index)}>-</button>
+                <input
+                  type="number"
+                  min="1"
+                  max="10"
+                  readOnly
+                  placeholder={cartItem.quantity}
+                />
+                <button onClick={() => handleIncrement(index)}>+</button>
               </div>
               <div className="cart__item-total-price">
                 <p>
@@ -28,6 +57,11 @@ function CartPage() {
                     cartItem.itemPrice * cartItem.quantity.toFixed(2)}
                 </p>
               </div>
+              <span className="cart__item-remove-item">
+                <button onClick={() => handleRemoveItem(index)}>
+                  <ImCross />
+                </button>
+              </span>
             </div>
             <div className="cart__item-desc">
               <div className="cart__item-title">
