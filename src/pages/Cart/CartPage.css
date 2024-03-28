@@ -64,6 +64,14 @@
   margin-bottom: 10px;
 }
 
+.cart__main-filling {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.cart__spice {
+  font-style: italic;
+}
 .cart__item-add-ons ul {
   list-style-type: none;
   margin-bottom: 10px;

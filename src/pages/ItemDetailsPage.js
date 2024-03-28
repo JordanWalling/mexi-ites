@@ -11,6 +11,7 @@ function ItemDetailsPage() {
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [mainChoice, setMainChoice] = useState(null);
+  const [selectedSpice, setSelectedSpice] = useState(null);
   const [selectedAddOns, setSelectedAddOns] = useState([]);
 
   async function fetchItem() {
@@ -61,11 +62,13 @@ function ItemDetailsPage() {
       image: item.image,
       mainFillingChoice: mainChoice,
       addOns: selectedAddOns,
+      spice: selectedSpice,
     };
 
     const existingItem = cart.find((cartItem) => {
       return (
         cartItem.title === newItem.title &&
+        cartItem.spice === newItem.selectedSpice &&
         cartItem.mainFillingChoice === mainChoice &&
         JSON.stringify(cartItem.addOns) === JSON.stringify(newItem.addOns)
       );
@@ -75,6 +78,7 @@ function ItemDetailsPage() {
       const updatedCart = cart.map((cartItem) => {
         if (
           cartItem.title === existingItem.title &&
+          cartItem.spice === existingItem.spice &&
           cartItem.mainFillingChoice === existingItem.mainFillingChoice &&
           JSON.stringify(cartItem.addOns) ===
             JSON.stringify(existingItem.addOns)
@@ -161,7 +165,13 @@ function ItemDetailsPage() {
                 return (
                   <div className="spice-level-mild">
                     <p>{spice}</p>
-                    <input type="radio" />
+                    <input
+                      type="radio"
+                      name="spiceChoice"
+                      value={spice}
+                      checked={selectedSpice === spice}
+                      onChange={(e) => setSelectedSpice(e.target.value)}
+                    />
                   </div>
                 );
               })}

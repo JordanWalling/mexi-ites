@@ -35,10 +35,15 @@ function CartPage() {
               </div>
               {cartItem.mainFillingChoice &&
                 cartItem.mainFillingChoice.length > 0 && (
-                  <div>
+                  <div className="cart__main-filling">
                     <span>{cartItem.mainFillingChoice}</span>
                   </div>
                 )}
+              {cartItem.spice && cartItem.spice.length > 0 && (
+                <div className="cart__spice">
+                  <span>{cartItem.spice}</span>
+                </div>
+              )}
               {cartItem.addOns.length > 0 && (
                 <div className="cart__item-add-ons">
                   {cartItem.addOns.map((addOn) => {
