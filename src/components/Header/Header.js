@@ -1,6 +1,6 @@
 import "../Header/Header.css";
 import { appContext } from "../../context/context";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { MdLocationOn } from "react-icons/md";
 import { FaListUl } from "react-icons/fa";
@@ -8,7 +8,15 @@ import { FaShoppingCart } from "react-icons/fa";
 
 function Header() {
   const { cart, setCart } = useContext(appContext);
+  const [totalQuantity, setTotalQuantity] = useState(0);
 
+  useEffect(() => {
+    let quantity = 0;
+    cart.forEach((item) => {
+      quantity += item.quantity;
+    });
+    setTotalQuantity(quantity);
+  }, [cart]);
   return (
     <header>
       <div className="header__container">
@@ -30,6 +38,11 @@ function Header() {
           <div className="header__cart">
             <Link to="/cart">
               <FaShoppingCart />
+              {totalQuantity > 0 && (
+                <span key={totalQuantity.index} className="added-icon">
+                  {totalQuantity}
+                </span>
+              )}
             </Link>
           </div>
         </div>
