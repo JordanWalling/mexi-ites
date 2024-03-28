@@ -11,6 +11,7 @@ function ItemDetailsPage() {
   const [item, setItem] = useState({});
   const [quantity, setQuantity] = useState(1);
   const [mainChoice, setMainChoice] = useState(null);
+  const [selectedAddOns, setSelectedAddOns] = useState([]);
 
   async function fetchItem() {
     const resp = await fetch("http://localhost:4000/items/" + id, {
@@ -42,20 +43,55 @@ function ItemDetailsPage() {
 
   let totalItemPrice = quantity * item.price;
 
-  function addToCart() {
-    setCart((prev) => {
-      return [
-        ...prev,
-        {
-          itemPrice: item.price,
-          quantity: quantity,
-          title: item.title,
-          image: item.image,
-          mainFillingChoice: mainChoice,
-        },
-      ];
+  function handleAddOnChange(addOn) {
+    setSelectedAddOns((prevSelected) => {
+      if (prevSelected.includes(addOn)) {
+        return prevSelected.filter((item) => item !== addOn);
+      } else {
+        return [...prevSelected, addOn];
+      }
     });
   }
+
+  function addToCart() {
+    const newItem = {
+      itemPrice: item.price,
+      quantity: quantity,
+      title: item.title,
+      image: item.image,
+      mainFillingChoice: mainChoice,
+      addOns: selectedAddOns,
+    };
+
+    const existingItem = cart.find((cartItem) => {
+      return (
+        cartItem.title === newItem.title &&
+        cartItem.mainFillingChoice === mainChoice &&
+        JSON.stringify(cartItem.addOns) === JSON.stringify(newItem.addOns)
+      );
+    });
+
+    if (existingItem) {
+      const updatedCart = cart.map((cartItem) => {
+        if (
+          cartItem.title === existingItem.title &&
+          cartItem.mainFillingChoice === existingItem.mainFillingChoice &&
+          JSON.stringify(cartItem.addOns) ===
+            JSON.stringify(existingItem.addOns)
+        ) {
+          return {
+            ...cartItem,
+            quantity: cartItem.quantity + quantity,
+          };
+        }
+        return cartItem;
+      });
+      setCart(updatedCart);
+    } else {
+      setCart((prev) => [...prev, newItem]);
+    }
+  }
+
   console.log(cart);
   console.log(mainChoice);
   return (
@@ -93,7 +129,7 @@ function ItemDetailsPage() {
               item.mainFilling.map((i) => {
                 return (
                   <>
-                    <div className="main-filling-container">
+                    <div className="main-filling-container" key={i}>
                       <div className="main-filling-img">
                         <img
                           src="https://images.pexels.com/photos/6896080/pexels-photo-6896080.jpeg?auto=compress&cs=tinysrgb&w=600"
@@ -101,7 +137,6 @@ function ItemDetailsPage() {
                         />
                       </div>
                       <div className="main-filling-title">
-                        {/* <p>Grilled Chicken</p> */}
                         <p>{i}</p>
                       </div>
                       <div className="main-filling-radio">
@@ -109,6 +144,7 @@ function ItemDetailsPage() {
                           type="radio"
                           name="mainFilling"
                           value={i}
+                          checked={mainChoice === i}
                           onChange={(e) => setMainChoice(e.target.value)}
                         />
                       </div>
@@ -146,7 +182,11 @@ function ItemDetailsPage() {
                       <p>{addOn}</p>
                     </div>
                     <div className="extras__checkbox">
-                      <input type="checkbox" />
+                      <input
+                        type="checkbox"
+                        value={selectedAddOns}
+                        onChange={() => handleAddOnChange(addOn)}
+                      />
                     </div>
                   </div>
                 );
