@@ -96,7 +96,9 @@ function CartPage() {
           </div>
         ))
       ) : (
-        <p>No Products in Cart</p>
+        <div className="cart__no-products">
+          <p>No Products in Cart</p>
+        </div>
       )}
 
       {cart.length > 0 && (

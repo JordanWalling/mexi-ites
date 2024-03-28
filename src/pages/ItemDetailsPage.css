@@ -1,7 +1,8 @@
 .item__details-main-content {
-  height: 70vh;
+  /* height: 70vh; */
   width: 100%;
   background-color: #fff;
+  margin-bottom: 20px;
 }
 
 .item__details-img {
@@ -150,8 +151,12 @@
   transform: scale(1.8);
 }
 
+.item__add-to-cart-container {
+  width: 90%;
+  margin: 0 auto;
+}
 .item__add-to-cart-container button {
-  width: calc(100% - 10px);
+  width: 100%;
   height: 40px;
   border-radius: 5px;
   border: none;
