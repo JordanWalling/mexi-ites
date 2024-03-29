@@ -6,11 +6,16 @@
 }
 
 .item__details-img {
+  width: 100%;
   margin-bottom: 10px;
+  margin: 10px auto;
 }
 
 .item__details-img img {
   width: 100%;
+  height: 230px;
+  object-fit: cover;
+  max-width: 400px;
 }
 
 .item__details-item-desc {
@@ -180,6 +185,9 @@
   .item__details-wrapper {
     width: 70%;
     margin: 40px auto;
+    max-width: 500px;
+  }
+  .item__details-img img {
     max-width: 500px;
   }
 }
