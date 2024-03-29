@@ -195,7 +195,7 @@ function ItemDetailsPage() {
                   <div className="extras__container">
                     <div className="extras__img">
                       <img
-                        src="https://images.pexels.com/photos/6103071/pexels-photo-6103071.jpeg?auto=compress&cs=tinysrgb&w=600"
+                        src="https://images.pexels.com/photos/2092897/pexels-photo-2092897.jpeg?auto=compress&cs=tinysrgb&w=600"
                         alt=""
                       />
                     </div>

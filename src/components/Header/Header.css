@@ -55,6 +55,12 @@ header {
   height: 20px;
 }
 
+.header__location a {
+  color: #fff;
+  width: 100%;
+  height: 20px;
+}
+
 .added-icon {
   position: absolute;
   top: -15px;

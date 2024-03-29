@@ -32,7 +32,9 @@ function Header() {
             </Link>
           </div>
           <div className="header__location">
-            <MdLocationOn />
+            <Link to="/contact">
+              <MdLocationOn />
+            </Link>
           </div>
 
           <div className="header__cart">
