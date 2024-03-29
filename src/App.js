@@ -8,6 +8,8 @@ import MenuListPage from "./pages/MenuListPage";
 import ItemDetailsPage from "./pages/ItemDetailsPage";
 import CartPage from "./pages/Cart/CartPage";
 import NotFound from "./pages/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
+          <ToastContainer />
         </BrowserRouter>
       </div>
     </AppProvider>

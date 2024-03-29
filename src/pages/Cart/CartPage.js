@@ -2,6 +2,7 @@ import "../Cart/CartPage.css";
 import { useContext, useState } from "react";
 import { appContext } from "../../context/context";
 import { ImCross } from "react-icons/im";
+import { toast } from "react-toastify";
 
 function CartPage() {
   const { cart, setCart } = useContext(appContext);
@@ -12,6 +13,9 @@ function CartPage() {
 
   function handleIncrement(index) {
     const updatedCart = [...cart];
+    if (updatedCart[index].quantity === 10) {
+      return;
+    }
     updatedCart[index].quantity += 1;
     setCart(updatedCart);
   }
@@ -29,6 +33,7 @@ function CartPage() {
   function handleRemoveItem(index) {
     const updatedCart = cart.filter((_, i) => i !== index);
     setCart(updatedCart);
+    toast.success("Item removed from Cart");
   }
   return (
     <div className="cart__wrapper">
@@ -53,8 +58,9 @@ function CartPage() {
               <div className="cart__item-total-price">
                 <p>
                   $
-                  {cartItem &&
-                    cartItem.itemPrice * cartItem.quantity.toFixed(2)}
+                  {(cartItem && cartItem.itemPrice * cartItem.quantity).toFixed(
+                    2
+                  )}
                 </p>
               </div>
               <span className="cart__item-remove-item">
@@ -84,9 +90,6 @@ function CartPage() {
                     return (
                       <ul key={addOn}>
                         <li>+ {addOn}</li>
-                        {/* <li>+ Cheese</li>
-                            <li>+ Tomatoe</li>
-                            <li>+ Chill Sauce</li> */}
                       </ul>
                     );
                   })}

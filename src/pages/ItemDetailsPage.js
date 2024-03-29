@@ -4,6 +4,7 @@ import { FaPlus } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { appContext } from "../context/context";
+import { toast } from "react-toastify";
 
 function ItemDetailsPage() {
   const { cart, setCart } = useContext(appContext);
@@ -55,6 +56,13 @@ function ItemDetailsPage() {
   }
 
   function addToCart() {
+    if (
+      (item.mainFilling && !mainChoice) ||
+      (item.spiceLevel && !selectedSpice)
+    ) {
+      toast.error("Please choose a Filling and Spice");
+      return;
+    }
     const newItem = {
       itemPrice: item.price,
       quantity: quantity,
@@ -88,10 +96,13 @@ function ItemDetailsPage() {
             quantity: cartItem.quantity + quantity,
           };
         }
+
         return cartItem;
       });
+      toast.success("Item Added to Cart");
       setCart(updatedCart);
     } else {
+      toast.success("Item Added to Cart");
       setCart((prev) => [...prev, newItem]);
     }
   }
