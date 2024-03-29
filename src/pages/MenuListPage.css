@@ -4,10 +4,11 @@
   padding-top: 20px;
 }
 .menulist__section ul {
+  border: 2px solid red;
   width: 90%;
   display: grid;
   grid-template-columns: 1fr;
-
+  /* grid-template-rows: 1fr 1fr; */
   margin: 0 auto;
 }
 

@@ -3,7 +3,7 @@
   max-width: 340px;
   min-height: 180px;
   display: grid;
-  grid-template-rows: 0.5fr 1fr;
+  grid-template-rows: 1fr;
   margin: 0 auto;
   margin-bottom: 20px;
   background-color: #fff;
@@ -60,6 +60,20 @@
   padding: 0 20px;
 }
 
+.card__ingredients-heading {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+.card__ingredients-heading h3 {
+  text-align: left;
+}
+
 .card__ingredients-title {
   margin-bottom: 15px;
 }
@@ -70,7 +84,7 @@
   letter-spacing: 0.25px;
   font-weight: bold;
   font-family: "Sinibold", sans-serif;
-  margin: 10px auto;
+  margin: 10px 0;
 }
 
 .card__ingredients-title ul {
@@ -120,5 +134,15 @@
   .card__ingredients-title ul {
     gap: 0;
     grid-template-columns: 1fr;
+  }
+  .card__ingredients-title ul li {
+    display: inline-flex;
+    margin-bottom: 0;
+  }
+  .card__ingredients-title ul li span:nth-child(1) {
+    display: none;
+  }
+  .card__description {
+    display: none;
   }
 }

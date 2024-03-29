@@ -1,7 +1,15 @@
 import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowDown } from "react-icons/io";
+import { useEffect, useState } from "react";
 import "../MenuListItemCard/MenuListItemCard.css";
 import { Link } from "react-router-dom";
 function MenuListItemCard({ item }) {
+  const [showIngredients, setShowIngredients] = useState(false);
+  const windowWidth = window.innerWidth;
+
+  function toggleIngredients() {
+    setShowIngredients((prev) => !prev);
+  }
   return (
     <li key={item.id} className="menulist__card">
       <div className="card__image">
@@ -12,15 +20,35 @@ function MenuListItemCard({ item }) {
         <p className="card__description">{item.description}</p>
         <div className="card__ingredients">
           <div className="card__ingredients-title">
-            {item.ingredients ? <h3>Ingredients</h3> : ""}
-            <ul>
+            {item.ingredients ? (
+              <div className="card__ingredients-heading">
+                <h3>Ingredients</h3>
+                {windowWidth < 768 ? (
+                  <span>
+                    <button onClick={toggleIngredients}>
+                      <IoIosArrowDown />
+                    </button>
+                  </span>
+                ) : null}
+              </div>
+            ) : (
+              ""
+            )}
+
+            <ul
+              style={
+                showIngredients || windowWidth >= 768
+                  ? { display: "block" }
+                  : { display: "none" }
+              }
+            >
               {item?.ingredients?.map((ingredient) => {
                 return (
                   <li key={ingredient}>
                     <span>
                       <IoIosArrowForward />
-                    </span>{" "}
-                    {ingredient}
+                    </span>
+                    <span>{ingredient} </span>
                   </li>
                 );
               })}

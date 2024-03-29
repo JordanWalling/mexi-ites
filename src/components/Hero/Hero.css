@@ -1,8 +1,9 @@
 .hero__section {
   height: calc(100vh - 75px);
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("https://images.pexels.com/photos/8479698/pexels-photo-8479698.jpeg?auto=compress&cs=tinysrgb&w=400");
-  max-width: 1200px;
+    /* url("https://images.pexels.com/photos/8479698/pexels-photo-8479698.jpeg?auto=compress&cs=tinysrgb&w=400"); */
+      url("../../assets/hero-image-mexi-bites.jpg");
+  max-width: 1000px;
   margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
