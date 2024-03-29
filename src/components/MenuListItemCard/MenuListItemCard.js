@@ -48,7 +48,7 @@ function MenuListItemCard({ item }) {
                     <span>
                       <IoIosArrowForward />
                     </span>
-                    <span>{ingredient} </span>
+                    <span> {ingredient}.</span>
                   </li>
                 );
               })}

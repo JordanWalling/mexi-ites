@@ -74,7 +74,6 @@ header {
 
 .header__cart {
   position: relative;
-  border: 2px solid red;
 }
 /*
 .header__cart a span {
