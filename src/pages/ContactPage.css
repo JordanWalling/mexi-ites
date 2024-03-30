@@ -77,7 +77,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 12px;
+  font-size: 16px;
   color: #171717;
 }
 
@@ -101,6 +101,7 @@
   .contact__item-value {
     display: flex;
     justify-content: flex-start;
+    flex: 2;
   }
   .contact__item-value p {
     font-size: 15px;
