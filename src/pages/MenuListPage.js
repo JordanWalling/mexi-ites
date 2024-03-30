@@ -1,5 +1,6 @@
 import "../pages/MenuListPage.css";
 import { useEffect, useState } from "react";
+import MenuTitle from "../components/MenuTitle/MenuTitle";
 import MenuListItemCard from "../components/MenuListItemCard/MenuListItemCard";
 import FilterButtons from "../components/FilterButtons/FilterButtons";
 import filters from "../data";
@@ -31,6 +32,7 @@ function MenuListPage() {
   });
   return (
     <>
+      <MenuTitle />
       <FilterButtons setCategoryChange={setCategoryChange} filters={filters} />
       <section className="menulist__section">
         <ul>
