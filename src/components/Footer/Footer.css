@@ -1,0 +1,22 @@
+.footer__wrapper {
+  height: 100px;
+  width: 100%;
+  background-color: #ffd204;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__wrapper p {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__wrapper p {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 600;
+  }
+}
