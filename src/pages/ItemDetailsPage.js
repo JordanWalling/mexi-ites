@@ -1,7 +1,7 @@
 import "../pages/ItemDetailsPage.css";
 import { FaMinus } from "react-icons/fa";
 import { FaPlus } from "react-icons/fa";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { appContext } from "../context/context";
 import { toast } from "react-toastify";
@@ -14,6 +14,7 @@ function ItemDetailsPage() {
   const [mainChoice, setMainChoice] = useState(null);
   const [selectedSpice, setSelectedSpice] = useState(null);
   const [selectedAddOns, setSelectedAddOns] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchItem() {
@@ -102,9 +103,11 @@ function ItemDetailsPage() {
       });
       toast.success("Item Added to Cart");
       setCart(updatedCart);
+      navigate("/menu");
     } else {
       toast.success("Item Added to Cart");
       setCart((prev) => [...prev, newItem]);
+      navigate("/menu");
     }
   }
 
