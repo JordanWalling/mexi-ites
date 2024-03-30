@@ -39,7 +39,7 @@ function CartPage() {
     <div className="cart__wrapper">
       {cart.length > 0 ? (
         cart.map((cartItem, index) => (
-          <div className="cart__item-container">
+          <div className="cart__item-container" key={index}>
             <div className="cart__item-number">
               <div className="cart__img-container">
                 <img src={cartItem.image} alt={cartItem.title} />

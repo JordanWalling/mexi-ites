@@ -173,7 +173,7 @@ function ItemDetailsPage() {
             {item.spiceLevel &&
               item.spiceLevel.map((spice) => {
                 return (
-                  <div className="spice-level-mild">
+                  <div className="spice-level-mild" key={spice}>
                     <p>{spice}</p>
                     <input
                       type="radio"
@@ -191,7 +191,7 @@ function ItemDetailsPage() {
             {item.addOns &&
               item.addOns.map((addOn) => {
                 return (
-                  <div className="extras__container">
+                  <div className="extras__container" key={addOn}>
                     <div className="extras__img">
                       <img
                         src="https://images.pexels.com/photos/2092897/pexels-photo-2092897.jpeg?auto=compress&cs=tinysrgb&w=600"
