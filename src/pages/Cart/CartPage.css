@@ -126,6 +126,7 @@
   background-color: #171717;
   color: #ffd204;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .cart__all-items-price button:hover {
