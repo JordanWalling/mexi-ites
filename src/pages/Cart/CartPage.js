@@ -38,6 +38,7 @@ function CartPage() {
 
   function resetCart() {
     setCart([]);
+    toast.success("Thank you for your Purchase");
   }
   return (
     <div className="cart__wrapper">
