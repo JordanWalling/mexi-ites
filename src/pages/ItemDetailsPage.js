@@ -15,27 +15,23 @@ function ItemDetailsPage() {
   const [selectedSpice, setSelectedSpice] = useState(null);
   const [selectedAddOns, setSelectedAddOns] = useState([]);
 
-  async function fetchItem() {
-    const resp = await fetch(
-      "https://backend-api-rh76.onrender.com/items/" + id,
-      {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-      }
-    );
-    const data = await resp.json();
-    setItem(data);
-  }
-
   useEffect(() => {
+    async function fetchItem() {
+      const resp = await fetch(
+        `https://backend-api-rh76.onrender.com/items/${id}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+        }
+      );
+      const data = await resp.json();
+      setItem(data);
+    }
     fetchItem();
-    return () => {
-      fetchItem();
-    };
-  }, []);
+  }, [id]);
 
   function handlePlusButtonClick() {
     if (quantity < 10) {
