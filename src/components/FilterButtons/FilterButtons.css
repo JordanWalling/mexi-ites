@@ -25,6 +25,11 @@
   letter-spacing: 0.5px;
   cursor: pointer;
 }
+
+.filter__btn-wrapper li button:hover {
+  color: #ffd204;
+  background-color: #171717;
+}
 /* 
 @media screen and (min-width: 768) {
     

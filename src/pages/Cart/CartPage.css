@@ -52,6 +52,10 @@
   font-size: 20px;
 }
 
+.cart__quantity-container button:hover {
+  color: #171717;
+  background-color: #ffd204;
+}
 .cart__quantity-container input[type="number"] {
   width: 50px;
   height: 30px;
