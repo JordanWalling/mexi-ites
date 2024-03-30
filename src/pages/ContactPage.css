@@ -64,7 +64,7 @@
   height: 100%;
   color: #171717;
   background-color: #ffd204;
-  border: 2px solid black;
+
   border-radius: 5px;
   /* border: 1px solid rgba(0, 0, 0, 0.2); */
   display: flex;
@@ -94,6 +94,7 @@
   margin: auto 0;
   color: #171717;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 @media screen and (min-width: 768px) {
