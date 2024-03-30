@@ -8,8 +8,9 @@ function MenuListPage() {
   const [items, setItems] = useState([]);
   const [category, setCategory] = useState("mains");
 
+  //
   async function fetchItems() {
-    const resp = await fetch("http://localhost:4000/items", {
+    const resp = await fetch("https://backend-api-rh76.onrender.com/items", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -30,6 +31,7 @@ function MenuListPage() {
   const filteredItems = items.filter((item) => {
     return item.category === category;
   });
+
   return (
     <>
       <MenuTitle />

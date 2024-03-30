@@ -1,5 +1,5 @@
 import "../Cart/CartPage.css";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { appContext } from "../../context/context";
 import { ImCross } from "react-icons/im";
 import { toast } from "react-toastify";
@@ -113,34 +113,3 @@ function CartPage() {
   );
 }
 export default CartPage;
-
-{
-  /* <div className="cart__item-container">
-        <div className="cart__img-container">
-          <img
-            src="https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg?auto=compress&cs=tinysrgb&w=800"
-            alt=""
-            width="70px"
-            height="70px"
-          />
-        </div>
-        <div className="cart__quantity-container">
-          <button>-</button>
-          <input type="number" />
-          <button>+</button>
-        </div>
-        <div className="cart__item-total-price">
-          <p>$29.95</p>
-        </div>
-        <div className="cart__item-title">
-          <h3>Burritos</h3>
-        </div>
-        <div className="cart__item-add-ons">
-          <ul>
-            <li>+ Cheese</li>
-            <li>+ Tomatoe</li>
-            <li>+ Chill Sauce</li>
-          </ul>
-        </div>
-      </div> */
-}

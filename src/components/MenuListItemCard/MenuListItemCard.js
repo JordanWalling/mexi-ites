@@ -1,6 +1,6 @@
 import { IoIosArrowForward } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../MenuListItemCard/MenuListItemCard.css";
 import { Link } from "react-router-dom";
 function MenuListItemCard({ item }) {

@@ -7,7 +7,7 @@ import { FaListUl } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 
 function Header() {
-  const { cart, setCart } = useContext(appContext);
+  const { cart } = useContext(appContext);
   const [totalQuantity, setTotalQuantity] = useState(0);
 
   useEffect(() => {

@@ -16,20 +16,25 @@ function ItemDetailsPage() {
   const [selectedAddOns, setSelectedAddOns] = useState([]);
 
   async function fetchItem() {
-    const resp = await fetch("http://localhost:4000/items/" + id, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    });
+    const resp = await fetch(
+      "https://backend-api-rh76.onrender.com/items/" + id,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      }
+    );
     const data = await resp.json();
     setItem(data);
-    console.log(data);
   }
 
   useEffect(() => {
     fetchItem();
+    return () => {
+      fetchItem();
+    };
   }, []);
 
   function handlePlusButtonClick() {
@@ -107,8 +112,6 @@ function ItemDetailsPage() {
     }
   }
 
-  console.log(cart);
-  console.log(mainChoice);
   return (
     <div className="item__details-wrapper">
       <div className="item__details-main-content">
