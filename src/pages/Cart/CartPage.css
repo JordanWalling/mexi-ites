@@ -108,10 +108,30 @@
   /* padding-bottom: 20vh; */
 }
 
+.cart__all-items-price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .cart__all-items-price h3 {
   text-align: center;
+  margin-bottom: 10px;
 }
 
+.cart__all-items-price button {
+  margin: 10px auto;
+  padding: 14px 10px;
+  border: none;
+  background-color: #171717;
+  color: #ffd204;
+  border-radius: 5px;
+}
+
+.cart__all-items-price button:hover {
+  color: #171717;
+  background-color: #ffd204;
+}
 @media screen and (min-width: 768px) {
   .cart__wrapper {
     padding-top: 10px;

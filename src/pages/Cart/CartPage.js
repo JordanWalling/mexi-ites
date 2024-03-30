@@ -35,6 +35,10 @@ function CartPage() {
     setCart(updatedCart);
     toast.success("Item removed from Cart");
   }
+
+  function resetCart() {
+    setCart([]);
+  }
   return (
     <div className="cart__wrapper">
       {cart.length > 0 ? (
@@ -107,6 +111,7 @@ function CartPage() {
       {cart.length > 0 && (
         <div className="cart__all-items-price">
           <h3>Total Price: ${totalPrice.toFixed(2)}</h3>
+          <button onClick={resetCart}>Purchase</button>
         </div>
       )}
     </div>
