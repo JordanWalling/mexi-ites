@@ -111,3 +111,5 @@ Installation is needed in order for the project to run. Please install:
   ```
     npm run start
   ```
+
+**Note**: Menu Items will take a while to load when page initially runs. This is due to the backend (render)
