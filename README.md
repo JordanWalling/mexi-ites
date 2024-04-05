@@ -75,8 +75,39 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ---
 
-- Youtube:
+- Here is a walkthrough of the App on Youtube:
   [Mex-ites](https://youtu.be/OyehU2yv_dY)
 
 - Gif:
   ![Demo Gif]("../../src/assets/mex-ites-demo-gif.gif)
+
+## Description
+---
+
+Welcome to my Mex-ites project. This is a Mexican restaurant based website which allows the user to browse the menu, look at individual items and add them to the cart. Items have different "add ons" and allows for multiple items to be added to the cart. Once the item has been added, the quantity inside the cart can be increased/decreased or removed completely. There is a simple purchase button which acts as a mock transaction. 
+
+## Project Setup
+Please follow the set up to have the project in your local environment. 
+
+## Prerequisites
+Installation is needed in order for the project to run. Please install:
+- [NodeJS] (https://nodejs.org/en/download/) - JavaScript runtime build
+- [Git] (https://git-scm.com/downloads) - used for version control
+
+## Install Project
+1. Clone Repository
+- In your computers terminal, locate to a folder you would like the repository in and enter:
+  ```
+    git clone github.com:JordanWalling/mexi-ites.git
+  ```
+
+2. Install Dependencies
+- Inside the folder you cloned the repository, in the terminal enter:
+  ```
+    npm install
+  ```
+
+3. Run the project
+  ```
+    npm run start
+  ```
